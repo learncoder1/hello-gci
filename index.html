@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn How to Fetch API</title>
+</head>
+<body>
+	<button onclick="getData()">Check Me</button>
+
+	<script type="text/javascript">
+		function getData() {
+			console.log('showing log');
+			const url = "https://randomuser.me/api/?results=1";
+
+			fetch(url)
+			.then(function(data) {
+				console.log(data.json())
+				return data.json();
+			}) 
+		}
+	</script>
+</body>
+</html>
