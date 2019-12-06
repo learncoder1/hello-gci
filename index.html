@@ -7,15 +7,12 @@
 	<button onclick="getData()">Check Me</button>
 
 	<script type="text/javascript">
-		function getData() {
-			console.log('showing log');
+		async function getData() {
 			const url = "https://randomuser.me/api/?results=1";
 
-			fetch(url)
-			.then(function(data) {
-				console.log(data.json())
-				return data.json();
-			}) 
+			const res = await fetch(url);
+			const data = await res.json();
+			console.log(data.results[0]);
 		}
 	</script>
 </body>
